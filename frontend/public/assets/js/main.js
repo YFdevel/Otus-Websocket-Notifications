@@ -2,7 +2,7 @@
 const notificationBtn=document.getElementById("notification-btn");
 
 
-const worker = new Worker("worker.js");
+const worker = new Worker('assets/js/worker.js', { type: `module` });
 
 notificationBtn.addEventListener('click',  async(e) => {
 
@@ -22,7 +22,7 @@ worker.addEventListener('message', (event) => {
 
                 const notification = new Notification('Yuriy', {
                     body: message,
-                    icon: './images/notification.png'
+                    icon: 'assets/images/notification.png'
                 })
                  setTimeout(notification.close(), 500)
             })
